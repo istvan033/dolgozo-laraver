@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Emp</title>
+</head>
+<body>
+    <div class="container">
+        <h1>dolgozók</h1>
+        <!-- Login Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" id="showLoginButton">
+            Bejelentkezés
+        </button>
+        
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="loginModalLabel">Bejelentkezés</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="user" class="form-label">Felhasználónév</label>
+                          <input type="text" class="form-control" id="user">
+                        </div>
+                        <div class="mb-3">
+                          <label for="pass" class="form-label">Jelszó</label>
+                          <input type="password" class="form-control" id="pass">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="closeButton" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+                <button type="loginButton" class="btn btn-primary" id="loginButton">Bejelentkezés</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Operator Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#operatorModal">
+            Hozzáadás
+        </button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Név</th>
+                    <th>Település</th>
+                    <th>Fizetés</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        
+        <!-- Operator Modal -->
+        <div class="modal fade" id="operatorModal" tabindex="-1" aria-labelledby="operatorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="operatorModalLabel">Hozzáadás</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3">
+                            <label for="id" class="form-label">Azonosító</label>
+                            <input type="text" class="form-control" id="id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label">Város</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="mb-3">
+                            <label for="salary" class="form-label">Fizetés</label>
+                            <input type="text" class="form-control" id="salary">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+                <button type="button" class="btn btn-primary" id="operatorButton">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
